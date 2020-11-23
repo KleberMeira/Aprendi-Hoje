@@ -15,9 +15,9 @@ bot.on('text', async (ctx, next) => {
     next()
 })
 
-bot.on('text', async (ctx, next) => {
+bot.on('text', async ctx => {
     await ctx.reply('Mid 2')
-    next()
+    
 })
 
 
