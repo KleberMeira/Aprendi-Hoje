@@ -1,0 +1,53 @@
+
+<div id = "app">
+
+    <p>{{ contador }}</p>
+    <button v-on:click="somar(5, $event)">Somar 1</button>
+    <p v-on:mousemove="atualizarXY"> Mouse: {{ x }}  e {{ y }}
+        <span v-on:mousemove="parar">PARAR AQUI</span>
+    </p>
+
+    <a v-on:click.prevent="" href="http://google.com"> Google </a>
+
+</div>
+
+ ou mousemove.stop
+ mousemove.stop.prevent -> parar e realizar o prevent
+
+
+
+
+
+<script>
+
+
+    new Vue({
+
+      el: '#app',
+      data: {
+          contador: 0,
+          x: 1,
+          y: 2
+        
+     },
+      methods: {
+          somar(passo, event){
+           this.contador+= passo         
+          },
+          atualizarXY(event){
+              this.x = event.clientX
+              this.y = event.clientY
+          },
+          parar(event){
+            event.stopPropagation()
+          },
+          naoNavegar(event){
+              console.log('Nao navegar')
+              event.preventDefaut()
+          }
+      }
+    })
+
+</script>
+
+

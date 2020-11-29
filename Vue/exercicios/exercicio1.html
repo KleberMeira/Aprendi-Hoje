@@ -1,0 +1,31 @@
+<script>
+
+
+    new Vue({
+
+      el: '#app',
+      data: {
+          titulo: 'Usando VueJs',
+          link:'https://google.com.br',
+          linkHtml: '"<a href:http://google.com"> Google</a'
+     },
+      methods: {
+          saudacao: function(){
+              this.titulo = 'Bom dia'             
+              return this.titulo
+          } 
+      }  
+
+    })
+
+</script>
+
+<div id = "app">
+
+    <p v-once>{{ titulo }}</p> 
+    <p>{{ saudacao }}</p>
+    <a v-bind:href="link">Google</a>
+    <hr>
+    <p v-html="linkHtml"></p>
+
+</div>
