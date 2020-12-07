@@ -175,3 +175,21 @@ guard let nome = refeicao2.nome else {
 
 print(nome)
 
+
+//Como nao usar opcionais
+
+class Refeicao {
+
+    //atributos
+    var felicidade: String
+    var       nome: String 
+    
+
+    //construtor
+    init(nome: String, felicidade: String){
+        self.felicidade = felicidade;
+        self.nome       = nome;
+    }
+}
+
+let refeicao2 = Refeicao(nome: "macarrao", felicidade: "5")
