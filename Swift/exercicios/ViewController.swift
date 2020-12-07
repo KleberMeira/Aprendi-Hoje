@@ -2,15 +2,15 @@ import UIKit
 
 class ViewController: UIViewController{
 
-    @IBOutlet var nomeTextField: UITextField! 
-    @IBOutlet var felicidadeTextField: UITextField!
+    @IBOutlet var nomeTextField: UITextField? 
+    @IBOutlet var felicidadeTextField: UITextField?
 
     //objective c
     //crach = quando o app fecha inesperadamente
 
     @IBAction func adcionar(_ sender: Any){
     let nome       = nomeTextField.text 
-    let felicidade = felicidadeTextField.text
+    let felicidade = felicidadeTextField?.text
     
         print("comi \(nome) e fiquei com a felicidade: \(felicidade)")
     }
@@ -153,7 +153,25 @@ func exibeNomeDaRefeicao(){
 exibeNomeDaRefeicao()
 
 
+//Metodos que retornam opcionais
 
+let numero = Int("5")
 
+if let n = numero{
+    print(n)
+}else{
+    print("error ao converter string para int")
+}
   
 }
+
+
+guard let nome = refeicao2.nome else {
+    //alguma coisa aqui
+    return
+}
+
+
+
+print(nome)
+
