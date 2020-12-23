@@ -1,5 +1,5 @@
 .env
-
+.Node\package-lock.json
 .gradle
 .idea
 # Logs
