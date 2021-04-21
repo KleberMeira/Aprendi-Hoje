@@ -10,6 +10,8 @@ defmodule InmanaWeb.Router do
 
     get "/", WelcomeController, :index
 
+    post "/restaurants", RestaurantsController, :create
+
   end
 
   # Enables LiveDashboard only for development
