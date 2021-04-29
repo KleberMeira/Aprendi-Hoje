@@ -8,6 +8,7 @@ module.exports = {
       'local',
       { session: false },
       (erro, usuario, info) => {
+        /*
         if (erro && erro.name === 'InvalidArgumentError') {
           return res.status(401).json({ erro: erro.message })
         }
@@ -18,6 +19,11 @@ module.exports = {
 
         if (!usuario) {
           return res.status(401).json()
+        }
+        */
+
+        if(erro){
+          return next(erro)
         }
 
         req.user = usuario
@@ -32,6 +38,12 @@ module.exports = {
       'bearer',
       { session: false },
       (erro, usuario, info) => {
+
+        if(erro){
+          return next(erro)
+        }
+
+        /*
         if (erro && erro.name === 'JsonWebTokenError') {
           return res.status(401).json({ erro: erro.message })
         }
@@ -49,6 +61,7 @@ module.exports = {
         if (!usuario) {
           return res.status(401).json()
         }
+        */
 
         req.token = info.token
         req.user = usuario
@@ -81,6 +94,7 @@ module.exports = {
       req.user = usuario
       next()
     } catch (erro) {
+      /*
       if (erro.name === 'JsonWebTokenError') {
         return res.status(401).json({ erro: erro.message })
       }
@@ -91,8 +105,9 @@ module.exports = {
           expiradoEm: erro.expiredAt
         })
       }
+      */
+      next(erro)
 
-      return res.status(500).json({ erro: erro.message })
     }
   }
 }
