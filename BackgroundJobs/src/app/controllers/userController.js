@@ -14,7 +14,9 @@ export default{
         //enviar um email --> Retorna uma promisse
 
         //Adicionar job RegistrationMail na Fila
-        await Queue.add({user})
+        await Queue.add('RegistrationMail',{user})
+
+        await Queue.add('UserReport', {user})
 
         return res.json(user);
 
