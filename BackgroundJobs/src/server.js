@@ -2,6 +2,7 @@ import 'dotenv/config'
 import express from 'express';
 import BullBoard from 'bull-board';
 import Queue from './app/lib/Queue'
+const soap = require('soap')
 
 import UserController from './app/controllers/userController'
 
@@ -17,4 +18,11 @@ app.post('/users', UserController.store)
 
 app.listen(3333, () => {
     console.log('Server running');
+})
+
+
+let url = 'http://www.gcomputer.net/webservices/dilbert.asmx?wsdl';
+soap.createClient(url, function(err, client){
+    if(err) return console.log(err);
+    console.log(client);
 })
