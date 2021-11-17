@@ -1,4 +1,4 @@
-import Mail from '../lib/Main';
+//import Mail from '../lib/Main';
 
 export default {
     key:'RegistrationMail',
@@ -7,11 +7,13 @@ export default {
 
         const { user } = data;
 
-        await Mail.sendMail({
-            from: 'Queue Test <queue@queuetest.com.br>',
-            to: `${user.name} <${user.email}>`,
-            subject: 'Cadastro de usuário',
-            html: `Olá, ${user.name}, bem-vindo ao sistema de filas.`
-        });
+        console.log("hey");
+
+        //await Mail.sendMail({
+            //from: 'Queue Test <queue@queuetest.com.br>',
+            //to: `${user.name} <${user.email}>`,
+          ///  subject: 'Cadastro de usuário',
+        //    html: `Olá, ${user.name}, bem-vindo ao sistema de filas.`
+      //  });
     }
 };

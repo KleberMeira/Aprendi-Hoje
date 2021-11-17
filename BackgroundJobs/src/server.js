@@ -1,4 +1,4 @@
-import 'dotenv/config'
+//import 'dotenv/config'
 import express from 'express';
 import BullBoard from 'bull-board';
 import Queue from './app/lib/Queue'

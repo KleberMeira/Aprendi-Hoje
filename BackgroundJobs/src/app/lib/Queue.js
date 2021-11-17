@@ -1,5 +1,5 @@
 import Queue from 'bull';
-import options from 'dotenv/lib/env-options';
+//import options from 'dotenv/lib/env-options';
 import redisConfig from '../../config/redis'
 
 import * as job from '../job';
