@@ -1,6 +1,7 @@
 import express, { application } from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
+import logger from './logger'
 
 import routes from './routes'
 class App {
@@ -18,6 +19,8 @@ class App {
     private middlewares (): void {
         this.express.use(express.json())
         this.express.use(cors())
+
+        logger.info(`Middleaweres ok`)
     }
 
     private database (): void{
@@ -29,7 +32,6 @@ class App {
     private routes (): void {
         this.express.use(routes)
     }
-
 
 }
 
