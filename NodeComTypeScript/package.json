@@ -26,10 +26,12 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
+    "correlation-id": "^4.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "logger": "^0.0.1",
     "mongoose": "^6.0.13",
+    "uuid": "^8.3.2",
     "winston": "^3.6.0"
   }
 }
